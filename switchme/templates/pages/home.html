@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block head_title %} - home{% endblock head_title %}
+
+{% block content %}
+
+    <div id="tweets">
+        Replace
+    </div>
+    
+    <script>
+        const tweetsElement = document.getElementById('tweets')
+        tweetsElement.innerHTML = 'Loading...'
+
+        var el1 = "<h1>Hi 1</h1>"
+        var el3 = "<h1>Hi 3</h1>"
+        var el2 = "<h1>Hi 2</h1>"
+        tweetsElement.innerHTML = el1+el2+el3
+
+        const xhr = new XMLHttpRequest()
+        const method = 'GET'
+        const url = '/tweets'
+        const responseType = 'json'
+
+        xhr.responseType = responseType
+        xhr.open(method, url)
+        xhr.onload = function () {
+            console.log(xhr.response)
+        }
+        xhr.send()
+    </script>
+
+{% endblock %}
+
+

@@ -1,5 +1,5 @@
 """
-WSGI config for tweetme project.
+WSGI config for switchme project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tweetme.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'switchme.settings')
 
 application = get_wsgi_application()
