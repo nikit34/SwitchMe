@@ -12,7 +12,8 @@ def tweet_list_view(request, *args, **kwargs):
     qs = Tweet.objects.all()
     tweets_list = [{
         'id': x.id,
-        'content': x.content
+        'content': x.content,
+        'likes': 0
     } for x in qs]
     data = {
         'response': tweets_list
