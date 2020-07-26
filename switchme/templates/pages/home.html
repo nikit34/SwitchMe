@@ -74,10 +74,13 @@
                         alert('An error occurred. Please try again.')
                     }
                 } else if(xhr.status == 401) {
-                    alert('You must login')
+                    alert('401, You must login')
+                    window.location.href = '/login'
+                } else if(xhr.status == 403) {
+                    alert('403, You must login')
                     window.location.href = '/login'
                 } else if(xhr.status == 500) {
-                    alert('Was a server error, please try again.')
+                    alert('500, Was a server error, please try again.')
                 }
             }
             xhr.onerror = function (){
