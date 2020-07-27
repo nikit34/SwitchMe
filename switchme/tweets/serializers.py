@@ -3,6 +3,7 @@ from django.conf import settings
 
 from .models import Tweet
 
+
 MAX_TWEET_LENGTH = settings.MAX_TWEET_LENGTH
 TWEET_ACTION_OPTIONS = settings.TWEET_ACTION_OPTIONS
 
@@ -10,6 +11,7 @@ TWEET_ACTION_OPTIONS = settings.TWEET_ACTION_OPTIONS
 class TweetActionSerializer(serializers.Serializer):
     id = serializers.IntegerField()
     action = serializers.CharField()
+    content = serializers.CharField(allow_blank=True, required=False)
 
     @staticmethod
     def validate_action(action):
