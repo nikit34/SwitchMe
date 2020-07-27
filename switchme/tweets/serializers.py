@@ -6,12 +6,13 @@ from .models import Tweet
 MAX_TWEET_LENGTH = settings.MAX_TWEET_LENGTH
 TWEET_ACTION_OPTIONS = settings.TWEET_ACTION_OPTIONS
 
+
 class TweetActionSerializer(serializers.Serializer):
     id = serializers.IntegerField()
     action = serializers.CharField()
 
     @staticmethod
-    def validate_action(self, action):
+    def validate_action(action):
         action = action.lower().strip()
         if not action in TWEET_ACTION_OPTIONS:
             raise serializers.ValidationError('This is not a valid action')
