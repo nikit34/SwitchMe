@@ -1,7 +1,4 @@
-from django.conf import settings
-from django.http import JsonResponse
-from django.shortcuts import render, redirect
-from django.utils.http import is_safe_url
+from django.shortcuts import render
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
 from rest_framework.response import Response
@@ -16,14 +13,16 @@ from .serializers import (
 )
 
 
-ALLOWED_HOSTS = settings.ALLOWED_HOSTS
-
-
 def home_view(request, *args, **kwargs):
     username = None
     if request.user.is_authenticated:
         username = request.user.username
-    return render(request, 'pages/home.html', context={'username': username}, status=200)
+    return render(
+        request,
+        'pages/home.html',
+        context={'username': username},
+        status=200
+    )
 
 
 @api_view(['POST'])
@@ -74,22 +73,22 @@ def tweet_action_view(request, *args, **kwargs):
     serializer = TweetActionSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
         data = serializer.validated_data
-        tweet_id = data.get('id')
-        action = data.get('action')
-        content = data.get('content')
+        tweet_id = data.get("id")
+        action = data.get("action")
+        content = data.get("content")
         qs = Tweet.objects.filter(id=tweet_id)
         if not qs.exists():
             return Response({}, status=404)
         obj = qs.first()
-        if action == 'like':
+        if action == "like":
             obj.likes.add(request.user)
             serializer = TweetSerializer(obj)
             return Response(serializer.data, status=200)
-        elif action == 'unlike':
+        elif action == "unlike":
             obj.likes.remove(request.user)
             serializer = TweetSerializer(obj)
             return Response(serializer.data, status=200)
-        elif action == 'retweet':
+        elif action == "retweet":
             new_tweet = Tweet.objects.create(
                 user=request.user,
                 parent=obj,
