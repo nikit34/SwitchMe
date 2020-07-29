@@ -12,8 +12,8 @@
 /.idea/inspectionProfiles/Project_Default.xml
 /.idea/vcs.xml
 /.idea/workspace.xml
-/static
-/static-root
+/switchme/static
+/switchme/static-root
 
 /node_modules
 /.pnp
