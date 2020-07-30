@@ -1,4 +1,3 @@
-from django.contrib import admin
 from django.urls import path
 
 from tweets.views import (
@@ -8,6 +7,7 @@ from tweets.views import (
     tweet_list_view,
     tweet_create_view,
 )
+
 
 urlpatterns = [
     path('', tweet_list_view),

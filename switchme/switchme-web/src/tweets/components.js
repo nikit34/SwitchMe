@@ -89,7 +89,7 @@ export function ActionBtn(props) {
     const handleActionBackendEvent = (response, status) => {
         console.log(response, status)
         if ((status === 200 || status === 201) && didPerformAction) {
-            didPerformAction(response)
+            didPerformAction(response, status)
         }
     }
     const handleClick = (event) => {
@@ -134,6 +134,7 @@ export function Tweet(props) {
             <ActionBtn tweet={actionTweet} didPerformAction={handlePerformAction} action={{type: "like", display: "Likes"}}/>
             <ActionBtn tweet={actionTweet} didPerformAction={handlePerformAction} action={{type: "unlike", display: "Unlikes"}}/>
             <ActionBtn tweet={actionTweet} didPerformAction={handlePerformAction} action={{type: "retweet", display: "Retweet"}}/>
-        </div>}
+        </div>
+        }
     </div>
 }

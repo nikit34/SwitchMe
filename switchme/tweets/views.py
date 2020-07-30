@@ -5,7 +5,6 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
 from .models import Tweet
-from .forms import TweetForm
 from .serializers import (
     TweetSerializer,
     TweetCreateSerializer,
