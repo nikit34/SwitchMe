@@ -1,6 +1,6 @@
 from django.urls import path
 
-from tweets.views import (
+from .views import (
     tweet_action_view,
     tweet_delete_view,
     tweet_detail_view,
