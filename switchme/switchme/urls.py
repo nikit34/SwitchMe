@@ -16,7 +16,7 @@ urlpatterns = [
     path('logout/', logout_view),
     path('register/', register_view),
     path('<int:tweet_id>', tweets_detail_view),
-    re_path(r'profile?/', include('profiles.urls')),
+    re_path(r'profiles?/', include('profiles.urls')),
     path('api/tweets/', include('tweets.api.urls'))
 ]
 
