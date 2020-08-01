@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {ActionBtn} from "./buttons";
 
-import {UserDisplay, UserLink, UserPicture} from "../profiles";
+import {UserDisplay, UserPicture} from "../profiles";
 
 
 export function ParentTweet(props) {
