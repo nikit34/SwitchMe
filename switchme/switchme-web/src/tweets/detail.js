@@ -35,7 +35,7 @@ export function Tweet(props) {
     }
     return <div className={className}>
         <div>
-            <p>{tweet.id} - {tweet.content}</p>
+            <p>{tweet.content}</p>
             <ParentTweet tweet={tweet} />
         </div>
         <div className='btn btn-group'>
