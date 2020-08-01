@@ -35,6 +35,12 @@ export function Tweet(props) {
     }
     return <div className={className}>
         <div>
+            <p>
+                {tweet.user.first_name}{' '}
+                {tweet.user.last_name}{' '}
+                <br />
+                @{tweet.user.username}
+            </p>
             <p>{tweet.content}</p>
             <ParentTweet tweet={tweet} />
         </div>

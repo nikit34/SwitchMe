@@ -63,6 +63,7 @@ export function TweetsList(props) {
             didRetweet={handleDidRetweet}
             className='my-5 py-5 border bg-white text-dark'
             key={`${index}-{item.id}`} />
-    })}{nextUrl !== null && <button onClick={handleLoadNext} className='btn btn-outline-primary'>Load Next</button>}
+    })}
+    {nextUrl !== null && <button onClick={handleLoadNext} className='btn btn-outline-primary'>Load Next</button>}
     </React.Fragment>
 }
