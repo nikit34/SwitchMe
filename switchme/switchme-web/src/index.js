@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {TweetsComponent, TweetDetailComponent} from "./tweets";
+import {FeedComponent, TweetsComponent, TweetDetailComponent} from "./tweets";
 import * as serviceWorker from './serviceWorker';
 
 
@@ -15,6 +15,11 @@ const e = React.createElement
 const tweetsEl = document.getElementById("switchme-2")
 if(tweetsEl){
     ReactDOM.render(e(TweetsComponent, tweetsEl.dataset), tweetsEl)
+}
+
+const tweetsFeedEl = document.getElementById("switchme-2-feed")
+if(tweetsFeedEl){
+    ReactDOM.render(e(FeedComponent, tweetsFeedEl.dataset), tweetsFeedEl)
 }
 
 const tweetDetailElements = document.querySelectorAll(".switchme-2-detail")
