@@ -130,7 +130,6 @@
         loadTweets(tweetsContainerElement)
 
         function handleTweetActionBtn(tweet_id, currentCount, action) {
-            console.log(tweet_id, currentCount, action)
             const url = '/api/tweets/action/'
             const method = 'POST'
             const data = JSON.stringify({
