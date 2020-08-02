@@ -15,7 +15,7 @@ function ProfileBadge(props){
     }
     return user ? <div>
         <UserPicture user={user} hideLink />
-        <p><UserDisplay user={user} includeFullName hideLink/></p>
+        <p><UserDisplay user={user} includeFullName hideLink /></p>
         <button className='btn btn-primary' onClick={handleFollowToggle}>{currentVerb}</button>
     </div> : null
 }
@@ -24,7 +24,7 @@ export function ProfileBadgeComponent(props){
     const {username} = props
     const [didLookup, setDidLookup] = useState(false)
     const [profile, setProfile] = useState(null)
-    const [profileLoading, setProfileLoading] = useState(null)
+    const [profileLoading, setProfileLoading] = useState(false)
     const handleBackendLookup = (response, status) => {
         if(status === 200){
             setProfile(response)
@@ -39,7 +39,7 @@ export function ProfileBadgeComponent(props){
     const handleNewFollow = (actionVerb) => {
         apiProfileFollowToggle(username, actionVerb, (response, status) => {
             if(status === 200){
-                apiProfileDetail(username, handleBackendLookup)
+                // apiProfileDetail(username, handleBackendLookup)
                 setProfile(response)
             }
             setProfileLoading(false)
