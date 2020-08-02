@@ -8,7 +8,7 @@ import {FeedList} from "./feed";
 
 export function FeedComponent(props) {
     const [newTweets, setNewTweets] = useState([])
-    const canTweet = props.canTweet !== "false"
+    const canTweet = props.canTweet === "false" ? false : true
     const handleNewTweet = (newTweet) => {
         let tempNewTweets = [...newTweets]
         tempNewTweets.unshift(newTweet)
@@ -22,7 +22,7 @@ export function FeedComponent(props) {
 
 export function TweetsComponent(props) {
     const [newTweets, setNewTweets] = useState([])
-    const canTweet = props.canTweet !== "false"
+    const canTweet = props.canTweet === "false" ? false : true
     const handleNewTweet = (newTweet) => {
         let tempNewTweets = [...newTweets]
         tempNewTweets.unshift(newTweet)
