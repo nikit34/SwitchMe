@@ -37,7 +37,7 @@ export function Tweet(props) {
             <span className='small'><UserDisplay user={retweeter} /></span>
         </div>}
         <div className='d-flex'>
-            <div className=''>
+            <div className=' '>
                 <UserPicture user={tweet.user} />
             </div>
             <div className='col-11'>
