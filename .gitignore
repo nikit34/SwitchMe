@@ -25,4 +25,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-/switchme/settings/__init__.py
+/switchme/switchme/settings/__init__.py
