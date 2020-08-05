@@ -11,7 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 SECRET_KEY = '=1l^ma2tp@nzkzzls-r*6r4j-ty9d3vp%+#10e7q_4gu&o)zk-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['nikit34test.pythonanywhere.com']
 
